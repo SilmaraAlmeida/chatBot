@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#fff, #0C4EB1);
+}
+
+.campo-chatbot {
+    width: 420px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.chat-cabecalho {
+    display: flex;
+    align-items: center;
+    background: #0C4EB1;
+    padding: 15px 22px;
+    justify-content: space-between;
+}
+
+.chat-cabecalho .cabecalho-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cabecalho-info .chat-logo {
+    height: 35px;
+    width: 35px;
+    padding: 6px;
+    color: #0C4EB1;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.cabecalho-info .chat-nome {
+    color: #fff;
+    font-size: 1.31rem;
+    font-weight: 600;
+}
+
+.chat-cabecalho #chat-fechar {
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    font-size: 1.9rem;
+    margin-right: -10px;
+    padding-top: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: none;
+    transition: 0.5s ease;
+}
+
+.chat-cabecalho #chat-fechar:hover {
+    background: #003B94;
+}

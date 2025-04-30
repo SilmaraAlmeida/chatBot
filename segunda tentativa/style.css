@@ -9,7 +9,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(#fff, #0C4EB1);
 }
 
 .campo-chatbot {
@@ -17,6 +16,7 @@ body {
     background: #fff;
     overflow: hidden;
     border-radius: 15px;
+    background: #b9d2f8;
 }
 
 .chat-cabecalho {
@@ -31,15 +31,6 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
-}
-
-.cabecalho-info .chat-logo {
-    height: 35px;
-    width: 35px;
-    padding: 6px;
-    color: #0C4EB1;
-    background: #fff;
-    border-radius: 50%;
 }
 
 .cabecalho-info .chat-nome {
@@ -64,4 +55,14 @@ body {
 
 .chat-cabecalho #chat-fechar:hover {
     background: #003B94;
+}
+
+.chat-corpo {
+    padding: 25px 22px;
+    display: flex;
+    gap: 20px;
+    height: 460px;
+    margin-bottom: 82px;
+    overflow-y: auto;
+    flex-direction: column;
 }

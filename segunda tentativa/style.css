@@ -210,6 +210,20 @@ body {
     transition: 0.2s ease;
 }
 
+.chat-form .chat-controls #enviar-mensagem {
+    color: #fff;
+    display: none;
+    background: #0C4EB1;
+}
+
+.chat-form .menssagem-input:valid ~ .chat-controls #enviar-mensagem {
+    display: block;
+}
+
+.chat-form .chat-controls #enviar-mensagem:hover {
+    background: #003B94;
+}
+
 .chat-form .chat-controls button:hover {
     background: #cfcfffda;
 }

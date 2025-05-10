@@ -12,10 +12,12 @@ body {
 }
 
 .campo-chatbot {
+    position: relative;
     width: 420px;
     background: #fff;
     overflow: hidden;
     background: #b9d2f8;
+    border-radius: 13px;
 }
 
 .chat-cabecalho {
@@ -97,7 +99,10 @@ body {
 
 .chat-corpo .bot-menssagem .texto-mensagem {
     background: #c4dcff;
+}
 
+.chat-corpo .bot-menssagem .texto-mensagem .thinking {
+    padding: 2px 16px;
 }
 
 .chat-corpo .usuario-menssagem .texto-mensagem {
@@ -113,13 +118,98 @@ body {
     animation: botao-loading 1.8s ease infinite;
 }
 
-.chat-corpo .bot-menssagem .proxima-bot .ponto-loading{
+.chat-corpo .bot-menssagem .proxima-bot {
+    display: flex;
+    gap: 4px;
+    padding-block: 15px;
+}
+
+.chat-corpo .bot-menssagem .proxima-bot .ponto-loading {
     height: 7px;
     width: 7px;
+    opacity: 0.7;
     border-radius: 50%;
-    background: #0C4EB1;
+    /* background: #0C4EB1; */
+    background: #73a9fa;
+    animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.chat-corpo .bot-menssagem .proxima-bot .ponto-loading:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.chat-corpo .bot-menssagem .proxima-bot .ponto-loading:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.chat-corpo .bot-menssagem .proxima-bot .ponto-loading:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 44% {
+        transform: translateY(0);
+    }
+
+    28% {
+        opacity: 0.4;
+        transform: translateY(-4px);
+    }
+
+    44% {
+        opacity: 0.2;
+    }
 }
 
 .chat-footer {
     position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #b9d2f8;
+    padding: 15px 22px 20px;
+}
+
+.chat-footer .chat-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 32px;
+    outline: 1px solid #CCCCE5;
+}
+
+.chat-footer .chat-form:focus-within {
+    outline: 1px solid #003B94;
+}
+
+.chat-form .menssagem-input {
+    border: none;
+    outline: none;
+    height: 47px;
+    width: 100%;
+    resize: none;
+    font-size: 0.95rem;
+    padding: 14px 0 13px 18px;
+    border-radius: inherit;
+}
+
+.chat-form .chat-controls {
+    align-items: center;
+    align-items: flex-end;
+    padding-right: 6px;
+}
+
+.chat-form .chat-controls button {
+    height: 35px;
+    width: 35px;
+    border: none;
+    font-size: 1.15rem;
+    cursor: pointer;
+    color: #706DB0;
+    background: none;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.chat-form .chat-controls button:hover {
+    background: #cfcfffda;
 }

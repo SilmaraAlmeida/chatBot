@@ -18,6 +18,8 @@ const dadosusuario = {
     message: null
 }
 
+const tamanhoInputInicial = inputMensagem.scrollHeight;
+
 // Cria um elemento de mensagem formatado
 const criarMensagem = (conteudo, ...classe) => {
     const div = document.createElement("div");
@@ -43,7 +45,7 @@ const geraRespostaBot = () => {
     if (pensando) pensando.remove();
 
     // Adiciona a resposta do bot
-    const conteudoResposta = `<p class="bot-icon">bot</p>
+    const conteudoResposta = `<p class="material-icons bot-icon">android</p>
         <div class="texto-mensagem">${resposta}</div>`;
 
     const mensagemBot = criarMensagem(conteudoResposta, "bot-menssagem");
@@ -56,6 +58,7 @@ const adicionarMensagemUsuario = (evento) => {
     evento.preventDefault();
     dadosusuario.message = inputMensagem.value.trim();
     inputMensagem.value = "";
+    inputMensagem.dispatchEvent(new Event("input"));
 
     const conteudo = `<div class="texto-mensagem"></div>`;
 
@@ -64,7 +67,7 @@ const adicionarMensagemUsuario = (evento) => {
     corpoDoChat.appendChild(mensagemElemento);
 
     setTimeout(() => {
-        const conteudo = `<p class="bot-icon">bot</p>
+        const conteudo = `<p class="material-icons bot-icon">android</p>
                 <div class="texto-mensagem">
                     <div class="proxima-bot">
                         <div class="ponto-loading"></div>
@@ -87,11 +90,26 @@ inputMensagem.addEventListener("keydown", (evento) => {
     const mensagem = evento.target.value.trim();
 
     if (evento.key === "Enter" && mensagem) {
-        evento.preventDefault();
-        adicionarMensagemUsuario(evento);
-        console.log(mensagem);
+        if (evento.shiftKey) {
+            // Se pressionado SHIFT + ENTER, cria uma nova linha (não envia a mensagem)
+            // Isso pode ser feito apenas adicionando uma quebra de linha
+            inputMensagem.value += '\n';
+        } else if (window.innerWidth > 768) {
+            evento.preventDefault(); // Impede o envio padrão do formulário (caso haja algum)
+            adicionarMensagemUsuario(evento); // Envia a mensagem
+            console.log(mensagem);
+        }
     }
 });
+
+inputMensagem.addEventListener("input", () => {
+    inputMensagem.style.height = `${tamanhoInputInicial}px`; // Reseta a altura
+    inputMensagem.style.height = `${inputMensagem.scrollHeight}px`; // Ajusta para a altura necessária
+
+    // Ajusta o border-radius dependendo do tamanho
+    document.querySelector(".chat-form").style.borderRadius = inputMensagem.scrollHeight > tamanhoInputInicial ? "15px" : "32px";
+});
+
 
 enviarMensagemBotao.addEventListener("click", (evento) => adicionarMensagemUsuario(evento));
 mostrarChatBot.addEventListener("click", () => document.body.classList.toggle("mostrar-chatBot"));

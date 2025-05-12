@@ -283,3 +283,26 @@ body.mostrar-chatBot .campo-chatbot {
 .chat-form .chat-controls button:hover {
     background: #cfcfffda;
 }
+
+@media (max-width: 520px) {
+    #mostrar-chatBot {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .campo-chatbot {
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .campo-chatbot .chat-cabecalho {
+        padding: 12px 15px;
+    }
+
+    .chat-footer {
+        padding: 10px 15px 15px;
+    }
+}

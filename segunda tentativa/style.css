@@ -140,10 +140,13 @@ body.mostrar-chatBot .campo-chatbot {
     padding: 12px 16px;
     max-width: 75%;
     font-size: 0.95rem;
+    border-radius: 18px 18px 4px 18px;
+
 }
 
 .chat-corpo .bot-menssagem .texto-mensagem {
     background: #c4dcff;
+    border-radius: 18px 18px 18px 4px;
 }
 
 .chat-corpo .bot-menssagem .texto-mensagem .thinking {
@@ -166,7 +169,7 @@ body.mostrar-chatBot .campo-chatbot {
 .chat-corpo .bot-menssagem .proxima-bot {
     display: flex;
     gap: 4px;
-    padding-block: 15px;
+    padding-block: 4px;
 }
 
 .chat-corpo .bot-menssagem .proxima-bot .ponto-loading {

@@ -1,0 +1,22 @@
+[
+    {
+        "keywords": ["oi", "olá", "eai", "opa"],
+        "resposta": "Olá! Como posso te ajudar?"
+    },
+    {
+        "keywords": ["tudo bem", "como vai", "tudo bom"],
+        "resposta": "Tudo ótimo por aqui! E com você?"
+    },
+    {
+        "keywords": ["nome", "quem é você"],
+        "resposta": "Sou um bot simples, mas pode me chamar de ChatzIA 🤖"
+    },
+    {
+        "keywords": ["obrigado", "obrigada", "valeu", "agradecido"],
+        "resposta": "De nada! Sempre por aqui. 😊"
+    },
+    {
+        "keywords": ["tchau", "até mais", "falou"],
+        "resposta": "Tchauzinho! Volte sempre!"
+    }
+]

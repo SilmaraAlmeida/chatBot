@@ -11,6 +11,8 @@ fetch("wordlist.json")
 const corpoDoChat = document.querySelector(".chat-corpo");
 const inputMensagem = document.querySelector(".menssagem-input");
 const enviarMensagemBotao = document.querySelector("#enviar-mensagem");
+const mostrarChatBot = document.querySelector("#mostrar-chatBot");
+const fecharChatBot = document.querySelector("#chat-fechar");
 
 const dadosusuario = {
     message: null
@@ -80,7 +82,7 @@ const adicionarMensagemUsuario = (evento) => {
     }, 600);
 }
 
-// Escuta o pressionar de tecla no input
+// Escuta ao pressionar de tecla no input
 inputMensagem.addEventListener("keydown", (evento) => {
     const mensagem = evento.target.value.trim();
 
@@ -92,3 +94,8 @@ inputMensagem.addEventListener("keydown", (evento) => {
 });
 
 enviarMensagemBotao.addEventListener("click", (evento) => adicionarMensagemUsuario(evento));
+mostrarChatBot.addEventListener("click", () => document.body.classList.toggle("mostrar-chatBot"));
+fecharChatBot.addEventListener("click", () => {
+  document.body.classList.remove("mostrar-chatBot");
+});
+

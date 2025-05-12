@@ -302,6 +302,11 @@ body.mostrar-chatBot .campo-chatbot {
         padding: 12px 15px;
     }
 
+    .chat-corpo {
+        height: calc(90% - 55px);
+        padding: 25px 15px;
+    }
+
     .chat-footer {
         padding: 10px 15px 15px;
     }

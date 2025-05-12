@@ -235,9 +235,17 @@ body.mostrar-chatBot .campo-chatbot {
     height: 47px;
     width: 100%;
     resize: none;
+    max-height: 180px;
+    white-space: pre-line;
     font-size: 0.95rem;
     padding: 14px 0 13px 18px;
     border-radius: inherit;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.chat-form .menssagem-input:hover {
+    scrollbar-color: transparent #90bcff;
 }
 
 .chat-form .chat-controls {
